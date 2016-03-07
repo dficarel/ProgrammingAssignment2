@@ -42,8 +42,8 @@ cacheSolve <- function(x, ...) {
     cat(sprintf("In cacheSolve for: %f seconds\n", elapsed))
     return(invcache)
   }
-  mat.data = x$getmatrix()
-  invcache = solve(mat.data, ...)
+  newmatrix = x$getmatrix()
+  invcache = solve(newmatrix, ...)
   x$setinverse(invcache)
   Time2 = Sys.time()
   elapsed = Time2 - Time1
